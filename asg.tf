@@ -13,7 +13,7 @@ resource "aws_launch_template" "launch_template" {
       Name = "launch_template_misyuro"
     }
   }
-  user_data = file("user_data.sh")
+  user_data = filebase64("user_data.sh")
 }
 
 resource "aws_autoscaling_group" "asg" {
